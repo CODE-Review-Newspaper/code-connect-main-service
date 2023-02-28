@@ -1,0 +1,51 @@
+services:
+  mongo1:
+    container_name: ccmongo1
+    image: mongo:6
+    ports:
+      - 27020:27017
+    volumes:
+      - ./scripts/rs-init.sh:/scripts/rs-init.sh
+      - ./scripts/init.js:/scripts/init.js
+    restart: always
+    entrypoint:
+      [
+        "/usr/bin/mongod",
+        "--bind_ip_all",
+        "--replSet",
+        "codeConnectRepl"
+      ]
+
+  mongo2:
+    container_name: ccmongo2
+    image: mongo:6
+    restart: always
+    entrypoint:
+      [
+        "/usr/bin/mongod",
+        "--bind_ip_all",
+        "--replSet",
+        "codeConnectRepl"
+      ]
+  mongo3:
+    container_name: ccmongo3
+    image: mongo:6
+    restart: always
+    entrypoint:
+      [
+        "/usr/bin/mongod",
+        "--bind_ip_all",
+        "--replSet",
+        "codeConnectRepl"
+      ]
+  ccexpress:
+    container_name: ccexpress
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    volumes:
+      - ./src/:/app/src
+    ports:
+      - 8001:8001
+    command: npm run dev
