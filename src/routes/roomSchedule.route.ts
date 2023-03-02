@@ -17,11 +17,11 @@ roomScheduleRouter.get("/events", async (req, res) => {
 
   const authorization = req.headers.authorization;
 
-  if (authorization == null) res.status(401).send("Unauthenticated");
+  if (authorization == null) return res.status(401).send("Unauthenticated");
 
   const [error, userInfo] = await validateGoogleAuth(header.idtoken as string);
 
-  if (error != null) res.status(403).send("Unauthorized");
+  if (error != null) return res.status(403).send("Unauthorized");
 
   res.status(200).send("Success");
 
