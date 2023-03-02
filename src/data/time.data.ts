@@ -1,0 +1,1 @@
+export const ROOM_SCHEDULES_FETCH_TIME_DAYS = 7;

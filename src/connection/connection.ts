@@ -1,23 +1,22 @@
 import { PrismaClient } from "@prisma/client";
 
 export const prisma = new PrismaClient({
-  log: ['query', 'info', 'warn', 'error'],
-})
+  log: ["query", "info", "warn", "error"],
+});
 
 export const connectToDB = async () => {
-  await prisma.$connect()
-  console.log("Successfully connected to Database")
-}
+  await prisma.$connect();
+  console.log("Successfully connected to Database");
+};
 
 export const disconnectDB = async () => {
   try {
-    await prisma.$disconnect()
+    await prisma.$disconnect();
 
-    const msg = "Succesfully disconnected from Database"
+    const msg = "Succesfully disconnected from Database";
 
-    return [null, msg] as const
+    return [null, msg] as const;
   } catch (error) {
-    return [error, null] as const
+    return [error, null] as const;
   }
-}
-
+};

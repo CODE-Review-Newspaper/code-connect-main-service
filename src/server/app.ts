@@ -6,7 +6,7 @@ export const app = express();
 app.use(express.json());
 
 app.get("/api/test", (req, res) => {
-  res.send("works")
-})
+  res.send("works");
+});
 
-app.use(roomScheduleRouter)
+app.use(roomScheduleRouter);

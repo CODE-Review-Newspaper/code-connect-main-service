@@ -1,3 +1,1 @@
-const userController = {
-  
-}
+const userController = {};

@@ -1,3 +1,1 @@
-const fetchData = (url: string, body: any, ) => {
-  
-}
+const fetchData = (url: string, body: any) => {};

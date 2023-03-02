@@ -9,35 +9,20 @@ services:
       - ./scripts/init.js:/scripts/init.js
     restart: always
     entrypoint:
-      [
-        "/usr/bin/mongod",
-        "--bind_ip_all",
-        "--replSet",
-        "codeConnectRepl"
-      ]
+      ["/usr/bin/mongod", "--bind_ip_all", "--replSet", "codeConnectRepl"]
 
   mongo2:
     container_name: ccmongo2
     image: mongo:6
     restart: always
     entrypoint:
-      [
-        "/usr/bin/mongod",
-        "--bind_ip_all",
-        "--replSet",
-        "codeConnectRepl"
-      ]
+      ["/usr/bin/mongod", "--bind_ip_all", "--replSet", "codeConnectRepl"]
   mongo3:
     container_name: ccmongo3
     image: mongo:6
     restart: always
     entrypoint:
-      [
-        "/usr/bin/mongod",
-        "--bind_ip_all",
-        "--replSet",
-        "codeConnectRepl"
-      ]
+      ["/usr/bin/mongod", "--bind_ip_all", "--replSet", "codeConnectRepl"]
   ccexpress:
     container_name: ccexpress
     build:

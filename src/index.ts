@@ -5,7 +5,7 @@ import { connectToDB, disconnectDB } from "./connection/connection";
 const main = async () => {
   app.listen(PORT, async () => {
     console.log("Server is listening on port: ", PORT);
-    await connectToDB()
+    // await connectToDB()
 
     // const [error, msg] = await disconnectDB()
 
@@ -16,5 +16,4 @@ const main = async () => {
   });
 };
 
-
-console.log(main())
+console.log(main());
