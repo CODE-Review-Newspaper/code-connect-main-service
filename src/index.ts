@@ -7,12 +7,12 @@ const main = async () => {
     console.log("Server is listening on port: ", PORT);
     await connectToDB()
 
-    const [error, msg] = await disconnectDB()
+    // const [error, msg] = await disconnectDB()
 
-    if (error != null)
-      return error
+    // if (error != null)
+    //   return error
 
-    console.log(msg)
+    // console.log(msg)
   });
 };
 
